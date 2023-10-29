@@ -21,7 +21,7 @@
 .chatBoxBottom .chatBoxInput {
   font-size: 15px;
   font-weight: bold;
-  width: 75%;
+  width: 70%;
   height: 40px;
   padding: 10px;
   border: none;
@@ -50,4 +50,10 @@
 }
 .icon {
   background-color: rebeccapurple;
+}
+.icon.send {
+  height: 30px;
+  width: 40px;
+  padding: 5px 10px;
+  margin: 0 2%;
 }

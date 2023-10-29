@@ -26,7 +26,14 @@
   font-size: 90%;
   font-weight: bold;
 }
-
+.opacity {
+  background-color: rgb(162, 150, 173);
+  cursor: not-allowed;
+}
+.opacity:hover {
+  background-color: rgb(162, 150, 173);
+  cursor: not-allowed;
+}
 .shareInput:focus {
   outline: none;
 }

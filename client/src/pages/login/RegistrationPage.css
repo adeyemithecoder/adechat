@@ -78,6 +78,10 @@ form button.opacity {
   background-color: rgb(162, 150, 173);
   cursor: not-allowed;
 }
+form button.opacity:hover {
+  background-color: rgb(162, 150, 173);
+  cursor: not-allowed;
+}
 
 input:invalid[focus="true"] {
   border: 1px solid red;

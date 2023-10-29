@@ -3,6 +3,7 @@ import { PermMedia, Cancel } from "@material-ui/icons";
 import { useContext, useRef, useState } from "react";
 import axios from "axios";
 import { Store } from "../../store";
+import LoadingBox from "../LoadingBox";
 // import { toast }  "react-toastify";
 
 export default function Share() {
@@ -14,8 +15,10 @@ export default function Share() {
   const desc = useRef();
   const [file, setFile] = useState(null);
   const [img, setImg] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const submitHandler = async (e) => {
+    setLoading(true);
     e.preventDefault();
     const newPost = {
       userId: INFO?._id,
@@ -31,14 +34,22 @@ export default function Share() {
         await axios.post(`${url}/upload`, data);
       } catch (err) {
         window.alert(err);
+      } finally {
+        setLoading(false);
       }
     }
     try {
+      setLoading(true);
       await axios.post(`${url}/posts`, newPost);
       window.location.reload();
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setLoading(false);
+    }
   };
   const ProfileImg = async (e) => {
+    setLoading(true);
     const IMG = {
       userId: INFO?._id,
     };
@@ -52,6 +63,8 @@ export default function Share() {
         await axios.post(`${url}/upload`, data);
       } catch (err) {
         window.alert(err);
+      } finally {
+        setLoading(false);
       }
     }
     try {
@@ -118,7 +131,9 @@ export default function Share() {
           <div className='shareImgContainer'>
             <img className='shareImg' src={URL.createObjectURL(img)} alt='' />
             <Cancel className='shareCancelImg' onClick={() => setImg(null)} />
-            <button onClick={ProfileImg}>Update</button>
+            <button className={loading && "opacity"} onClick={ProfileImg}>
+              {loading ? <LoadingBox /> : "Update"}
+            </button>
           </div>
         )}
       </div>
@@ -136,7 +151,10 @@ export default function Share() {
               className='shareInput'
               ref={desc}
             />
-            <button onClick={submitHandler}>Post</button>
+            <button className={loading && "opacity"} onClick={submitHandler}>
+              {" "}
+              {loading ? <LoadingBox /> : "Post"}
+            </button>
           </div>
         )}
       </div>

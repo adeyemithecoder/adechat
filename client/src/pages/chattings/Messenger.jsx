@@ -136,7 +136,7 @@ const Messenger = ({
             className='chatBoxInput'
             placeholder='write your message'
           />
-          <CameraAlt className='icon' />
+          <CameraAlt className='icon send' />
           <SendSharpIcon
             onClick={handleSendMessage}
             className='icon send'
