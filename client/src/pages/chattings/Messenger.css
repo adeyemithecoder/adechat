@@ -1,0 +1,53 @@
+.chatContainer {
+  height: 100vh;
+}
+.chatContainer .chatBoxWTop {
+  height: 85vh;
+  padding-right: 10px;
+  overflow-y: scroll;
+  background-color: rgb(243, 236, 243);
+}
+
+.chatBoxWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.chatBoxBottom {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.chatBoxBottom .chatBoxInput {
+  font-size: 15px;
+  font-weight: bold;
+  width: 75%;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  position: sticky;
+}
+
+.emoji {
+  position: relative;
+}
+.emoji svg {
+  font-size: 1.5rem;
+}
+.emoji .emoji-picker-react {
+  position: absolute;
+  top: -350px;
+}
+.upperContainer {
+  display: flex;
+  background-color: rebeccapurple;
+  align-items: center;
+  color: white;
+  position: static;
+  padding-top: 12px;
+  padding-left: 5%;
+}
+.icon {
+  background-color: rebeccapurple;
+}

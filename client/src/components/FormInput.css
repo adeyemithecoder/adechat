@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.formInput {
+  background-color: brown;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.allInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.allInput label {
+  font-size: 20px;
+  display: flex;
+  align-self: self-start;
+  margin-left: 10%;
+}
+.allInput span {
+  width: 80%;
+  font-size: 15px;
+  padding: 3px;
+  display: none;
+  color: red;
+}
+.Forminput {
+  height: 60px;
+  width: 80%;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid gray;
+  outline: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+@media screen and (max-width: 625px) {
+  .Forminput {
+    height: 50px;
+    width: 90%;
+    padding: 10px;
+    margin: 7px 0;
+    font-size: 15px;
+  }
+}

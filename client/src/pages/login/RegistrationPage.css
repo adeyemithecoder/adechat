@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+      rgba(240, 118, 148, 0.226),
+      rgba(231, 120, 231, 0.6)
+    ),
+    url("./images/background.avif");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: auto 0;
+}
+
+.grid1 {
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  width: 90%;
+  margin: 1rem;
+}
+
+.grid2 {
+  flex-basis: 50%;
+  display: flex;
+}
+form {
+  flex-basis: 75%;
+  margin: auto;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  /* width: 90%; */
+}
+form .link {
+  color: rebeccapurple;
+  text-align: center;
+  height: 30px;
+  font-weight: bold;
+  font-size: 18px;
+  /* margin-top: 15px; */
+  margin-bottom: 10px;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+h1 {
+  margin-top: 20px;
+  color: rgb(116, 4, 116);
+  text-align: center;
+}
+form button {
+  width: 80%;
+  margin: 0 auto;
+  height: 60px;
+  padding: 10px;
+  border: none;
+  background: rebeccapurple;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+form button.opacity {
+  background-color: rgb(162, 150, 173);
+  cursor: not-allowed;
+}
+
+input:invalid[focus="true"] {
+  border: 1px solid red;
+}
+input:invalid[focus="true"] ~ span {
+  font-size: large;
+  display: block;
+}
+
+.form-control {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+/* @media screen and (max-width: 1024px) {
+  .register {
+    flex-direction: column;
+    margin-top: 0;
+    height: auto;
+    display: flex;
+    align-items: normal;
+    justify-content: none;
+  }
+  .register .grid2 {
+    flex-basis: 4%;
+    padding-bottom: 12%;
+  }
+  .grid1 {
+    flex-basis: 1%;
+    margin-bottom: 8%;
+  }
+} */
+@media screen and (max-width: 1000px) {
+  .register {
+    flex-direction: column;
+    height: auto;
+  }
+  .register .grid2 {
+    flex-basis: 100%;
+    width: 100%;
+    padding-bottom: 12%;
+  }
+  form {
+    flex-basis: 95%;
+  }
+  .grid1 {
+    width: 95%;
+    flex-basis: 1%;
+    margin-bottom: 8%;
+  }
+}

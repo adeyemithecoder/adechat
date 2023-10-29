@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* :root {
+  --color-text-base: #eaa023;
+  --main-color: rebeccapurple;
+  --second-color: rgb(219, 133, 219);
+  --dark-light: #191f3a;
+  --white: #ffffff;
+  --white-light: #c8c8c8;
+  --shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+  scroll-behavior: smooth;
+  --cursive-font: "Dancing Script", cursive;
+} */
+
+a:-webkit-any-link {
+  text-decoration: none;
+}
+.PageNotFound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  font-weight: bold;
+  font-size: 40px;
+  color: white;
+  height: 100vh;
+  flex-direction: column;
+}
+.PageNotFound h1 {
+  color: white;
+}
+
+.sections {
+  max-width: 900px;
+  background-color: white;
+  margin: 0 auto;
+}

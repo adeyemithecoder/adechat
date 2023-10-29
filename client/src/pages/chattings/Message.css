@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=PT+Sans&family=Poppins:wght@300;400;500;600&family=Roboto:wght@100;300;400;500&display=swap");
+/* font-family: 'Barlow', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'PT Sans', sans-serif;
+  font-family: 'Roboto', sans-serif; */
+.message {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.messageTop {
+  display: flex;
+}
+.messageImg {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+  border: 2px solid rgb(238, 160, 238);
+}
+.messageTextContainer {
+  display: flex;
+  gap: 10%;
+  flex-direction: column;
+}
+.messageText {
+  border-radius: 15px;
+  border-top-left-radius: 0px;
+  padding: 5px;
+  background-color: white;
+  max-width: 250px;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+}
+.time {
+  text-align: end;
+}
+.message.own {
+  align-items: flex-end;
+}
+.message.own .messageText {
+  border-radius: 20px;
+  background-color: rgb(238, 193, 238);
+  border-top-right-radius: 0px;
+}

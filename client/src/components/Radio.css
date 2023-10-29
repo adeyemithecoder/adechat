@@ -1,0 +1,37 @@
+.radioContainer {
+  display: flex;
+  width: 80%;
+  margin: 2% auto;
+  justify-content: space-between;
+}
+
+.radio-label {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+.radio-div {
+  margin-right: 10px;
+  border: 2px solid purple;
+  border-radius: 50%;
+  width: 1.25em;
+  height: 1.25em;
+  padding: 2px;
+  box-sizing: border-box;
+}
+.radio-div::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: gray;
+  display: block;
+  transform: scale(0);
+  transition: transform 0.15s;
+}
+.radio-input:checked + .radio-div::after {
+  transform: scale(1);
+}
+.radio-input {
+  display: none;
+}

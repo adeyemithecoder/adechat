@@ -1,0 +1,92 @@
+.editContaiainer {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 140vh;
+  background: linear-gradient(
+      rgba(240, 118, 148, 0.226),
+      rgba(231, 120, 231, 0.6)
+    ),
+    url("./images/background.avif");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.upperContainer {
+  top: 0;
+  position: sticky;
+  display: flex;
+  width: 100%;
+  height: 70px;
+  background-color: rebeccapurple;
+  align-items: center;
+  color: white;
+  padding: 1% 2%;
+}
+.wrapper {
+  height: 100vh;
+  width: 90%;
+  display: flex;
+  border-radius: 20px;
+}
+.wrapper form {
+  flex-basis: 100%;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+}
+form .link {
+  color: rebeccapurple;
+  text-align: center;
+  height: 30px;
+  font-weight: bold;
+  font-size: 18px;
+  /* margin-top: 15px; */
+  margin-bottom: 10px;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+button {
+  width: 80%;
+  margin: 0 auto;
+  height: 60px;
+  padding: 10px;
+  border: none;
+  background: rebeccapurple;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+button:hover {
+  background: rgb(136, 65, 206);
+}
+input:invalid[focus="true"] {
+  border: 1px solid red;
+}
+input:invalid[focus="true"] ~ span {
+  font-size: large;
+  display: block;
+}
+
+.form-control {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.ForgottenPassword {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.ForgottenPassword form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}

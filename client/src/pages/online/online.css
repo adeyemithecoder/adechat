@@ -1,0 +1,81 @@
+.rightbarFriend {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  cursor: pointer;
+  padding-left: 5%;
+}
+.nameImg {
+  display: flex;
+  align-items: center;
+  flex: 3;
+}
+.notification {
+  flex: 1;
+  font-size: 15px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.notificationCount {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: white;
+  background-color: limegreen;
+}
+.rightbarFriend:active {
+  background-color: rgb(223, 131, 223);
+}
+.rightbarFriend:hover {
+  background-color: rgb(223, 178, 223);
+}
+.rightbarProfileImgContainer {
+  margin-right: 10px;
+  height: 45px;
+  position: relative;
+}
+
+.rightbarOnline {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: limegreen;
+  position: absolute;
+  top: -2px;
+  right: 0;
+  border: 2px solid white;
+}
+.offline {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: rgba(124, 79, 79, 0.418);
+  position: absolute;
+  top: -2px;
+  right: 0;
+  border: 2px solid white;
+}
+.rightbarTitle {
+  text-align: center;
+  font-size: x-large;
+  font-weight: bold;
+}
+.rightbarProfileImg {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: auto 0;
+}
+
+.rightbarUsername {
+  font-size: 15px;
+  font-weight: bold;
+}
