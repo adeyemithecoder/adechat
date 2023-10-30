@@ -16,19 +16,19 @@ export const Topbar = ({ display }) => {
       <section className='section sections'>
         <div className={!display ? "hidden" : "upper_section"}>
           <div>
-            <Link to='/' className='AdeChat'>
+            <Link to='/' className='AdeChat link'>
               AdeChat
             </Link>
           </div>
           <ul>
             <li>
               <Link to='footer' className='link'>
-                <Search className='icon' />
+                <Search className='icon links' />
               </Link>
             </li>
             <li>
               <Link to='settings' className='link'>
-                <MoreVert className='icon' />
+                <MoreVert className='icon links' />
               </Link>
             </li>
           </ul>

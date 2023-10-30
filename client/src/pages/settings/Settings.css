@@ -21,7 +21,7 @@
 .settings-items:hover {
   background-color: rgb(230, 225, 230);
 }
-.upperContainer {
+/* .upperContainer {
   top: 0;
   position: sticky;
   display: flex;
@@ -31,4 +31,4 @@
   align-items: center;
   color: white;
   padding: 1% 2%;
-}
+} */

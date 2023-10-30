@@ -1,10 +1,5 @@
-.chatContainer {
-  height: 100vh;
-}
 .chatContainer .chatBoxWTop {
-  height: 85vh;
-  padding-right: 10px;
-  overflow-y: scroll;
+  margin-right: 10px;
   background-color: rgb(243, 236, 243);
 }
 
@@ -17,6 +12,8 @@
   display: flex;
   align-items: center;
   width: 100%;
+  position: sticky;
+  bottom: 0;
 }
 .chatBoxBottom .chatBoxInput {
   font-size: 15px;
@@ -26,7 +23,6 @@
   padding: 10px;
   border: none;
   outline: none;
-  position: sticky;
 }
 
 .emoji {
@@ -39,15 +35,16 @@
   position: absolute;
   top: -350px;
 }
-.upperContainer {
+/* .chatBoxWrapper.upperContainer {
   display: flex;
-  background-color: rebeccapurple;
+  background-color: red;
   align-items: center;
   color: white;
+  display: none;
   position: static;
   padding-top: 12px;
   padding-left: 5%;
-}
+} */
 .icon {
   background-color: rebeccapurple;
 }

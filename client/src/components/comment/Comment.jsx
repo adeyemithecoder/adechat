@@ -61,7 +61,7 @@ const Comment = () => {
     inputRef?.current.focus();
   }, [allComments]);
   return (
-    <div className='commentContainer'>
+    <div>
       <div className='upperContainer'>
         <ArrowBack onClick={() => navigate("/")} />
       </div>

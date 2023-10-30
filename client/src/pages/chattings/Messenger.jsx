@@ -47,7 +47,7 @@ const Messenger = ({
 
   const handleSendMessage = async (e) => {
     e.preventDefault();
-    if (!userInfo) return;
+    if (!userInfo || !newMessages) return;
     const result = {
       from: userInfo._id,
       to: curChat._id,
@@ -87,62 +87,59 @@ const Messenger = ({
   }, [curChat]);
 
   return (
-    <div className='chatContainer'>
-      <div className='chatBoxWrapper'>
-        <div className='upperContainer'>
-          <ArrowBack fontSize='large' onClick={noCurChar} />
-          <img
-            className='messageImg'
-            src={
-              curChat.profilePicture
-                ? PF + curChat?.profilePicture
-                : PF + "person/noAvatar.png"
-            }
-            alt='profilePicture'
-          />
-          <span>
-            <h2>{curChat?.username}</h2>
-            <p> {typing ? "typing..." : ""}</p>
-          </span>
-        </div>
-        <div className='chatBoxWTop'>
-          {messages?.map((message, i) => (
-            <div key={i} ref={scrollRef}>
-              <Message
-                curChat={curChat}
-                msg={message?.messages}
-                own={message?.myOwn}
-                updatedAt={message?.updatedAt}
-                messages={messages}
-              />
-            </div>
-          ))}
-        </div>
-        <form onSubmit={handleSendMessage} className='chatBoxBottom'>
-          <div className='emoji'>
-            <InsertEmoticonIcon onClick={EmojiPicker} />
-            {showEmojiPi && (
-              <Picker
-                className='emoji-picker-react'
-                onEmojiClick={emojiClicked}
-              />
-            )}
-          </div>
-          <input
-            type='text'
-            ref={inputRef}
-            value={newMessages}
-            onChange={getMessage}
-            className='chatBoxInput'
-            placeholder='write your message'
-          />
-          <CameraAlt className='icon send' />
-          <SendSharpIcon
-            onClick={handleSendMessage}
-            className='icon send'
-          />{" "}
-        </form>
+    <div className='chatBoxWrapper'>
+      <div className='upperContainer'>
+        <ArrowBack fontSize='large' onClick={noCurChar} />
+        <img
+          className='messageImg'
+          src={
+            curChat.profilePicture
+              ? curChat?.profilePicture
+              : PF + "person/noAvatar.png"
+          }
+          alt='profilePicture'
+        />
+        <span>
+          <h2>{curChat?.username}</h2>
+          <p> {typing ? "typing..." : ""}</p>
+        </span>
       </div>
+
+      <div className='chatBoxWTop'>
+        {messages?.map((message, i) => (
+          <div key={i} ref={scrollRef}>
+            <Message
+              curChat={curChat}
+              msg={message?.messages}
+              own={message?.myOwn}
+              updatedAt={message?.updatedAt}
+              messages={messages}
+            />
+          </div>
+        ))}
+      </div>
+
+      <form onSubmit={handleSendMessage} className='chatBoxBottom'>
+        <div className='emoji'>
+          <InsertEmoticonIcon onClick={EmojiPicker} />
+          {showEmojiPi && (
+            <Picker
+              className='emoji-picker-react'
+              onEmojiClick={emojiClicked}
+            />
+          )}
+        </div>
+        <input
+          type='text'
+          ref={inputRef}
+          value={newMessages}
+          onChange={getMessage}
+          className='chatBoxInput'
+          placeholder='write your message'
+        />
+        <CameraAlt className='icon send' />
+        <SendSharpIcon onClick={handleSendMessage} className='icon send' />{" "}
+      </form>
     </div>
   );
 };

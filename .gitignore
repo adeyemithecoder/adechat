@@ -23,4 +23,4 @@ build
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-# git push -u origin main
+git push -u origin main
