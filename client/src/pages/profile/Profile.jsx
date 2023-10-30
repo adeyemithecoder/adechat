@@ -72,7 +72,7 @@ export default function Profile() {
                 className='profileCoverImg'
                 src={
                   user.coverPicture
-                    ? PF + user.coverPicture
+                    ? user.coverPicture
                     : PF + "person/noCover.png"
                 }
                 alt='coverPicture'
@@ -81,23 +81,21 @@ export default function Profile() {
                 className='profileUserImg'
                 src={
                   user.profilePicture
-                    ? PF + user.profilePicture
+                    ? user.profilePicture
                     : PF + "person/noAvatar.png"
                 }
                 alt=''
               />
-              <h4 className='profileInfoName'>{user.username}</h4>
-            </div>
-            <div className='profileInfo'>
-              <span className='profileInfoDesc'>{user.desc}</span>
             </div>
           </div>
+
           <div className='myProfile'>
-            <h2>
-              <Link to='/editpage'>
-                {userId === userInfo._id && "Adit your Profile"}{" "}
+            <h2 className='profileInfoName'>{user.username}</h2>
+            <h3>
+              <Link className='link' to='/editpage'>
+                {userId === userInfo._id && "Click here to edit your Profile"}{" "}
               </Link>
-            </h2>
+            </h3>
             <div className='myProfileDetails'>
               <p>
                 {" "}

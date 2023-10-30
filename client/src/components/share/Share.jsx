@@ -17,63 +17,80 @@ export default function Share() {
   const [img, setImg] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  const handleProfileimg = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const base64String = e.target.result;
+        setImg(base64String);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+  const handlePostImg = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const base64String = e.target.result;
+        setFile(base64String);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const submitHandler = async (e) => {
-    setLoading(true);
     e.preventDefault();
+    if (!file) return;
+    setLoading(true);
     const newPost = {
       userId: INFO?._id,
       desc: desc.current.value,
+      img: file,
     };
-    if (file) {
-      const data = new FormData();
-      const fileName = Date.now() + file.name;
-      data.append("name", fileName);
-      data.append("file", file);
-      newPost.img = fileName;
-      try {
-        await axios.post(`${url}/upload`, data);
-      } catch (err) {
-        window.alert(err);
-      } finally {
-        setLoading(false);
-      }
-    }
+    // if (file) {
+    //   const data = new FormData();
+    //   const fileName = Date.now() + file.name;
+    //   data.append("name", fileName);
+    //   data.append("file", file);
+    //   newPost.img = fileName;
+    //   try {
+    //     await axios.post(`${url}/upload`, data);
+    //   } catch (err) {
+    //     window.alert(err);
+    //   }
+    // }
     try {
-      setLoading(true);
       await axios.post(`${url}/posts`, newPost);
       window.location.reload();
     } catch (err) {
       console.log(err);
     } finally {
       setLoading(false);
+      setFile(null);
     }
   };
   const ProfileImg = async (e) => {
+    if (!img) return;
     setLoading(true);
     const IMG = {
       userId: INFO?._id,
+      profilePicture: img,
     };
-    if (img) {
-      const data = new FormData();
-      const fileName = Date.now() + img.name;
-      data.append("name", fileName);
-      data.append("file", img);
-      IMG.profilePicture = fileName;
-      try {
-        await axios.post(`${url}/upload`, data);
-      } catch (err) {
-        window.alert(err);
-      } finally {
-        setLoading(false);
-      }
-    }
     try {
+      console.log("data");
       const { data } = await axios.put(`${url}/users/${INFO._id}/update`, IMG);
       localStorage.removeItem("userInfo");
       localStorage.setItem("userInfo", JSON.stringify(data));
-      console.log(INFO);
+      console.log(data);
       window.location.reload();
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setLoading(false);
+      setImg(null);
+    }
   };
 
   return (
@@ -88,20 +105,18 @@ export default function Share() {
                 className='shareProfileImg'
                 src={
                   INFO?.profilePicture
-                    ? PF + INFO?.profilePicture
+                    ? INFO?.profilePicture
                     : PF + "person/noAvatar.png"
                 }
-                alt=''
+                alt='profilePicture'
               />
               <input
                 style={{ display: "none" }}
                 type='file'
                 id='fi'
-                accept='.png,.jpeg,.jpg'
-                onChange={(e) => setImg(e.target.files[0])}
+                onChange={handleProfileimg}
               />
             </label>
-            {/* <button onClick={newImg}>DONE</button> */}
           </div>
           <input
             placeholder={"What's in your mind " + INFO?.username + "?"}
@@ -109,6 +124,7 @@ export default function Share() {
             ref={desc}
           />
         </div>
+
         <div className='shareOptions'>
           <label htmlFor='file' className='shareOption'>
             <PermMedia htmlColor='tomato' className='shareIcon' />
@@ -117,8 +133,7 @@ export default function Share() {
               style={{ display: "none" }}
               type='file'
               id='file'
-              accept='.png,.jpeg,.jpg'
-              onChange={(e) => setFile(e.target.files[0])}
+              onChange={handlePostImg}
             />
           </label>
         </div>
@@ -129,10 +144,11 @@ export default function Share() {
       <div>
         {img && (
           <div className='shareImgContainer'>
-            <img className='shareImg' src={URL.createObjectURL(img)} alt='' />
+            {/* <img src={URL.createObjectURL(img)} alt='' /> */}
+            {img && <img className='shareImg' src={img} alt='Uploaded File' />}
             <Cancel className='shareCancelImg' onClick={() => setImg(null)} />
-            <button className={loading && "opacity"} onClick={ProfileImg}>
-              {loading ? <LoadingBox /> : "Update"}
+            <button onClick={ProfileImg}>
+              {loading ? <LoadingBox /> : "Update"}{" "}
             </button>
           </div>
         )}
@@ -140,7 +156,7 @@ export default function Share() {
       <div>
         {file && (
           <div className='shareImgContainer'>
-            <img className='shareImg' src={URL.createObjectURL(file)} alt='' />
+            {file && <img className='shareImg' src={file} alt='Post img' />}
             <Cancel
               className='shareCancelImg'
               fontSize='large'
@@ -151,7 +167,7 @@ export default function Share() {
               className='shareInput'
               ref={desc}
             />
-            <button className={loading && "opacity"} onClick={submitHandler}>
+            <button onClick={submitHandler}>
               {" "}
               {loading ? <LoadingBox /> : "Post"}
             </button>

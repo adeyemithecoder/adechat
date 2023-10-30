@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Store } from "../../store";
 import "./Message.css";
 import { format } from "timeago.js";
@@ -15,7 +15,7 @@ const Message = ({ curChat, own, msg, updatedAt, key }) => {
             className='messageImg'
             src={
               userInfo.profilePicture
-                ? PF + userInfo?.profilePicture
+                ? userInfo?.profilePicture
                 : PF + "person/noAvatar.png"
             }
             alt='profilePicture'
@@ -25,7 +25,7 @@ const Message = ({ curChat, own, msg, updatedAt, key }) => {
             className='messageImg'
             src={
               curChat.profilePicture
-                ? PF + curChat?.profilePicture
+                ? curChat?.profilePicture
                 : PF + "person/noAvatar.png"
             }
             alt='profilePicture'

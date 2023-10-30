@@ -44,7 +44,7 @@ export default function Post({ post, comment, lik }) {
                 className='postProfileImg'
                 src={
                   user.profilePicture
-                    ? PF + user.profilePicture
+                    ? user.profilePicture
                     : PF + "person/noAvatar.png"
                 }
                 alt=''
@@ -53,13 +53,10 @@ export default function Post({ post, comment, lik }) {
             <span className='postUsername'>{user.username}</span>
             <span className='postDate'>{format(post.createdAt)}</span>
           </div>
-          {/* <div className='postTopRight'>
-            <MoreVert />
-          </div> */}
         </div>
         <div className='postCenter'>
           <span className='postText'>{post?.desc}</span>
-          <img className='postImg' src={PF + post.img} alt='' />
+          <img className='postImg' src={post.img} alt='Post Img' />
         </div>
         <div className='postBottom'>
           <div className='postBottomLeft'>

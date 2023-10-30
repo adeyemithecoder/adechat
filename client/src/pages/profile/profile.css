@@ -1,37 +1,25 @@
 .profileCover {
-  /* height: 320px; */
   position: relative;
 }
 
 .profileCoverImg {
   width: 100%;
-  /* height: 250px; */
   object-fit: cover;
 }
 
 .profileUserImg {
-  /* width: 150px;
-  height: 150px; */
-  height: 50%;
-  /* width: 40%; */
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
   position: absolute;
   left: 0;
   right: 0;
   margin: auto;
-  /* top: 150px; */
   top: 60%;
   border: 3px solid white;
 }
 .profileInfoName {
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-size: 24px;
-  position: absolute;
-  top: 115%;
-  /* display: none; */
 }
 
 .profileInfo {
@@ -40,14 +28,14 @@
   align-items: center;
   justify-content: center;
 }
-.profileInfoDesc {
-  font-weight: 300;
-}
 .myProfile {
-  margin-top: 4rem;
+  margin-top: 6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.myProfile h2 {
+  margin-bottom: 1rem;
 }
 .myProfileDetails {
   margin-top: 1rem;

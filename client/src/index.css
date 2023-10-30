@@ -38,3 +38,6 @@ a:-webkit-any-link {
   background-color: white;
   margin: 0 auto;
 }
+.link {
+  text-decoration: none;
+}

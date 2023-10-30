@@ -76,11 +76,9 @@ const Comment = () => {
                     <img
                       className='messageImg'
                       src={
-                        comment.img
-                          ? PF + comment?.img
-                          : PF + "person/noAvatar.png"
+                        comment.img ? comment?.img : PF + "person/noAvatar.png"
                       }
-                      alt='img'
+                      alt='comment img'
                     />
                   }
                   <div className='commentText'>
