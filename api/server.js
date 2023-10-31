@@ -19,7 +19,13 @@ const port = process.env.PORT || 4000;
 app.use("/users", userRouter);
 app.use("/posts", postRouter);
 app.use("/message", messageRoute);
-app.use("/images", express.static(path.join(__dirname, "public/images")));
+// app.use("/images", express.static(path.join(__dirname, "public/images")));
+app.use("/build", express.static(path.join(__dirname, "public/build")));
+
+// app.use(express.static(path.join(__dirname, "../client/build")));
+app.get("*", (req, res) =>
+  res.sendFile(path.join(__dirname, "/public/build/index.html"))
+);
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "public/images");
@@ -41,10 +47,7 @@ app.get("/", (req, res) => res.send("welcome to chatapp"));
 app.use((err, req, res, next) => {
   res.status(500).send({ message: `From Test ${err.message}` });
 });
-app.use(express.static(path.join(__dirname, "/client/build")));
-app.get("*", (req, res) =>
-  res.sendFile(path.join(__dirname, "/client/build/index.html"))
-);
+
 const server = app.listen(port, () =>
   console.log(`app is currently running on port http://localhost:${port}`)
 );
