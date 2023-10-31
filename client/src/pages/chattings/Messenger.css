@@ -5,6 +5,7 @@
 .chatBoxWTop {
   padding-right: 10px;
   padding-left: 10px;
+  padding-bottom: 30px;
   background-color: rgb(243, 236, 243);
   flex: 9;
 }

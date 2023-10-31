@@ -2,7 +2,7 @@
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Home from "./pages/home/Home";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import Profile from "./pages/profile/Profile";
 import RegistrationPage from "./pages/login/RegistrationPage";
 import LoginPage from "./pages/login/LoginPage";
@@ -86,7 +86,7 @@ function App() {
       <ToastContainer position='bottom-center' limit={1} />
       <Router>
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route exact path='/' element={<Home />} />
           <Route path='/register' element={<RegistrationPage />} />
           <Route path='/online' element={<Online />} />
           <Route path='/loginpage' element={<LoginPage />} />
