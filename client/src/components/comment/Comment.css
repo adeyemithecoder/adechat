@@ -4,6 +4,7 @@
 .commentContainer .commentTop {
   padding-right: 10px;
   background-color: rgb(240, 211, 240);
+  padding-bottom: 40px;
 }
 
 .chatBoxWrapper {
