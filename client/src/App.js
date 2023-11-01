@@ -19,7 +19,7 @@ import Check from "./components/Check";
 import EditUser from "./pages/changes/EditUser";
 import ForgottenPassword from "./pages/changes/ForgottenPassword";
 import ResettingPassword from "./pages/changes/ResettingPassword";
-import Comment from "./components/comment/Comment";
+import Comment from "./pages/comment/Comment";
 
 function App() {
   const url = process.env.REACT_APP_SERVER_URL;

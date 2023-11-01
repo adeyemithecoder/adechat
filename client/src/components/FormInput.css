@@ -49,3 +49,51 @@
     font-size: 15px;
   }
 }
+.DialogBackground {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(200, 200, 200);
+  position: fixed;
+}
+.DialogContainer {
+  height: 300px;
+  width: 300px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0px 0px 16px 0.5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.DialogContainer .CloseDialog {
+  width: 100%;
+  text-align: right;
+}
+.DialogContainer .CloseDialog button {
+  margin-right: 12px;
+  background-color: crimson;
+}
+.DialogContainer h1 {
+  margin: 0;
+}
+.DialogContainer h2 .question {
+  font-size: 60px;
+  color: blueviolet;
+}
+.DialogContainer .action {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.DialogContainer button {
+  background-color: blueviolet;
+  height: 40px;
+  width: 60px;
+}
+.DialogContainer .action .red {
+  background-color: crimson;
+}

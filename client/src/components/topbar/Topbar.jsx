@@ -8,9 +8,7 @@ export const Topbar = ({ display }) => {
   const { state } = useContext(Store);
   const { userInfo } = state;
   const [activeNav, setActiveNav] = useState("");
-  useEffect(() => {}, [activeNav]);
 
-  console.log(activeNav);
   return (
     <header className='header container'>
       <section className='section sections'>
@@ -79,19 +77,3 @@ export const Topbar = ({ display }) => {
     </header>
   );
 };
-// export const Back = (curChat, typing, PF, noCurChar) => {
-//   return (
-//     <div className='upperContainer'>
-//       <ArrowBack fontSize='large' onClick={noCurChar} />
-//       <img
-//         className='messageImg'
-//         src={PF + curChat?.profilePicture}
-//         alt='profilePicture'
-//       />
-//       <span>
-//         <h2>{curChat?.username}</h2>
-//         <p> {typing ? "typing..." : ""}</p>
-//       </span>
-//     </div>
-//   );
-// };

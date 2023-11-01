@@ -7,7 +7,7 @@ const baseUrl = () =>
     ? process.env.BASE_URL
     : process.env.NODE_ENV !== "production"
     ? "http://localhost:3000"
-    : "https://adechat.onrender.com";
+    : "https://adechat.onrender.com/#";
 
 const generateToken = (user) => {
   return jwt.sign(
