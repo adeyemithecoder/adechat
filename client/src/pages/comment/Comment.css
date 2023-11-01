@@ -1,0 +1,57 @@
+.commentContainer {
+  height: 100vh;
+}
+.commentContainer .commentTop {
+  padding-right: 10px;
+  background-color: rgb(240, 211, 240);
+  padding-bottom: 40px;
+}
+
+.chatBoxWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chatBoxInput {
+  font-size: 15px;
+  font-weight: bold;
+  width: 80%;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  position: sticky;
+  outline: none;
+}
+.icon {
+  width: 70px;
+  height: 40px;
+  border: none;
+  margin: 1%;
+  /* padding: 2%; */
+  border-radius: 5px;
+  cursor: pointer;
+  /* background-color: rebeccapurple; */
+  color: white;
+}
+.chatSubmitbtn {
+  background-color: rebeccapurple;
+  border-radius: 50%;
+}
+.commentText {
+  border-radius: 15px;
+  border-top-left-radius: 0px;
+  padding: 5px;
+  background-color: white;
+  max-width: 250px;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+}
+.icon.chatSubmitbtn {
+  height: 30px;
+  width: 40px;
+  padding: 5px 10px;
+  margin: 0 2%;
+}
