@@ -57,11 +57,14 @@ li {
   font-size: 45px;
   padding: 10px;
 }
+
+.container .link:hover,
 .links:hover {
   background: rgba(1, 1, 1, 0.25);
   color: white;
 }
-.links:active {
+.container .link:active,
+.links:hover {
   background: rgba(1, 1, 1, 0.25);
   color: white;
 }

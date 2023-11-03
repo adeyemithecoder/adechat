@@ -20,11 +20,6 @@ export const Topbar = ({ display }) => {
           </div>
           <ul>
             <li>
-              <Link to='footer' className='link'>
-                <Search className='icon links' />
-              </Link>
-            </li>
-            <li>
               <Link to='settings' className='link'>
                 <MoreVert className='icon links' />
               </Link>

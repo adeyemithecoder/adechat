@@ -34,8 +34,7 @@ const Messenger = ({
   const EmojiPicker = () => {
     setShowEmojiPi(!showEmojiPi);
   };
-  const emojiClicked = (e, emoji) => {
-    console.log(emoji);
+  const emojiClicked = (emoji) => {
     let message = newMessages;
     message += emoji.emoji;
     setNewMessages(message);
@@ -75,16 +74,6 @@ const Messenger = ({
       window.alert(getError(err));
     }
   };
-  useEffect(() => {
-    const getCount = async () => {
-      console.log("running");
-      // setCount((prev) => [...prev, user.data.messageCount.length]);
-      // await axios.put(`/users/${curChat._id}/update`, {
-      //   messageCount: count,
-      // });
-    };
-    getCount();
-  }, [curChat]);
 
   return (
     <div className='chatBoxWrapper'>
@@ -118,16 +107,15 @@ const Messenger = ({
           </div>
         ))}
       </div>
-
+      <div className='emoji-container'>
+        {" "}
+        {showEmojiPi && (
+          <Picker className='emoji-picker-react' onEmojiClick={emojiClicked} />
+        )}
+      </div>
       <form onSubmit={handleSendMessage} className='chatBoxBottom'>
         <div className='emoji'>
           <InsertEmoticonIcon onClick={EmojiPicker} />
-          {showEmojiPi && (
-            <Picker
-              className='emoji-picker-react'
-              onEmojiClick={emojiClicked}
-            />
-          )}
         </div>
         <input
           type='text'
@@ -137,7 +125,6 @@ const Messenger = ({
           className='chatBoxInput'
           placeholder='write your message'
         />
-        <CameraAlt className='icon send' />
         <SendSharpIcon onClick={handleSendMessage} className='icon send' />{" "}
       </form>
     </div>
