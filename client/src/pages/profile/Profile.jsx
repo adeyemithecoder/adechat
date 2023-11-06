@@ -20,12 +20,14 @@ import {
   Wc,
 } from "@material-ui/icons";
 import MessageBox from "../../components/MessageBox";
+import LoadingBox from "../../components/LoadingBox";
 export default function Profile() {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const url = process.env.REACT_APP_SERVER_URL;
   const [user, setUser] = useState({});
   const userId = useParams().userId;
   const [posts, setPosts] = useState([]);
+  const [isloading, setIsloading] = useState(true);
   const [error, setError] = useState("");
   const { state } = useContext(Store);
   const { userInfo } = state;
@@ -41,7 +43,7 @@ export default function Profile() {
         );
       } catch (err) {
         toast.error(getError(err));
-        window.alert(getError(err));
+        setError(getError(err));
       }
     };
     console.log("object");
@@ -53,8 +55,9 @@ export default function Profile() {
         const res = await axios.get(`${url}/users?userId=${userId}`);
         setUser(res.data);
       } catch (err) {
-        toast.error(getError(err));
         setError(getError(err));
+      } finally {
+        setIsloading(false);
       }
     };
     fetchUser();
@@ -62,7 +65,9 @@ export default function Profile() {
   return (
     <div className='sections'>
       <Topbar />
-      {error ? (
+      {isloading ? (
+        <LoadingBox />
+      ) : error ? (
         <MessageBox>{error}</MessageBox>
       ) : (
         <div className='profileRight'>

@@ -31,7 +31,6 @@ export default function Online() {
       socket.current.emit("add-user", userInfo._id);
     }
   }, [userInfo, url]);
-
   useEffect(() => {
     if (arrivalMessage) {
       setMessages((prev) => [...prev, arrivalMessage]);
@@ -49,7 +48,6 @@ export default function Online() {
         setMessages(data);
       } catch (err) {
         toast.error(getError(err));
-        window.alert(getError(err));
       }
     };
     getMessage();
