@@ -84,7 +84,8 @@
 .shareImgContainer {
   padding: 0 30px 20px 30px;
   position: relative;
-  width: 50%;
+  width: 200px;
+  /* height: 300px; */
 }
 
 .shareImg {
