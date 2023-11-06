@@ -120,7 +120,7 @@ const Messenger = ({
         <input
           type='text'
           ref={inputRef}
-          value={newMessages.trim()}
+          value={newMessages}
           onChange={getMessage}
           className='chatBoxInput'
           placeholder='write your message'
