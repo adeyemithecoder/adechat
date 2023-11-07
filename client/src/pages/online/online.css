@@ -4,6 +4,7 @@
   margin-bottom: 15px;
   cursor: pointer;
   padding-left: 5%;
+  transition: all ease 0.5s;
 }
 .nameImg {
   display: flex;

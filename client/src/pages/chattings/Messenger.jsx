@@ -43,10 +43,13 @@ const Messenger = ({
     scrollRef?.current?.scrollIntoView({ behaviour: "smooth" });
     inputRef?.current?.focus();
   }, [messages]);
+  function containsOnlyWhiteSpace(inputValue) {
+    return /^\s*$/.test(inputValue);
+  }
 
   const handleSendMessage = async (e) => {
     e.preventDefault();
-    if (!userInfo || !newMessages) return;
+    if (!userInfo || containsOnlyWhiteSpace(newMessages)) return;
     const result = {
       from: userInfo._id,
       to: curChat._id,
@@ -74,7 +77,6 @@ const Messenger = ({
       window.alert(getError(err));
     }
   };
-
   return (
     <div className='chatBoxWrapper'>
       <div className='upperContainer'>
@@ -107,12 +109,12 @@ const Messenger = ({
           </div>
         ))}
       </div>
-      <div className='emoji-container'>
+      {/* <div className='emoji-container'>
         {" "}
         {showEmojiPi && (
           <Picker className='emoji-picker-react' onEmojiClick={emojiClicked} />
         )}
-      </div>
+      </div> */}
       <form onSubmit={handleSendMessage} className='chatBoxBottom'>
         <div className='emoji'>
           <InsertEmoticonIcon onClick={EmojiPicker} />

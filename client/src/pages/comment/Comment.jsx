@@ -39,10 +39,12 @@ const Comment = () => {
     };
     fetchPost();
   }, [postId, url]);
-
+  function containsOnlyWhiteSpace(inputValue) {
+    return /^\s*$/.test(inputValue);
+  }
   const commentHandler = async (e) => {
     e.preventDefault();
-    if (!post) return;
+    if (!post || containsOnlyWhiteSpace(commentText)) return;
     try {
       const { data } = await axios.put(
         `${url}/posts/` + post._id + "/comments",
@@ -62,7 +64,7 @@ const Comment = () => {
     inputRef?.current.focus();
   }, [allComments]);
   return (
-    <div>
+    <div className='sections'>
       <div className='upperContainer'>
         <ArrowBack onClick={() => navigate("/")} />
       </div>
@@ -95,7 +97,7 @@ const Comment = () => {
         </div>
       </div>
 
-      <form onSubmit={commentHandler} className='chatBoxBottom'>
+      <form onSubmit={(e) => e.preventDefault()} className='chatBoxBottom'>
         <input
           type='text'
           ref={inputRef}
