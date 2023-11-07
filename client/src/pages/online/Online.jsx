@@ -10,6 +10,8 @@ import { useNavigate } from "react-router-dom";
 import { io } from "socket.io-client";
 import LoadingBox from "../../components/LoadingBox";
 import MessageBox from "../../components/MessageBox";
+// import { format } from "timeago.js";
+import { format } from "date-fns";
 export default function Online() {
   const { state } = useContext(Store);
   const { userInfo } = state;
@@ -176,7 +178,13 @@ export default function Online() {
                             <p className='rightbarUsername'>
                               {user.online
                                 ? "online"
-                                : "left since " + user.onlineTime}
+                                : user.onlineTime
+                                ? "left since " + user.onlineTime
+                                : "left since " +
+                                  format(
+                                    new Date(user.updatedAt),
+                                    "yyyy-MM-dd hh:mm:ss a"
+                                  )}
                             </p>
                           </div>
                         </div>

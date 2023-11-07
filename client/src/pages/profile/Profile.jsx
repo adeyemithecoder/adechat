@@ -8,6 +8,8 @@ import { toast } from "react-toastify";
 import { getError } from "../../components/getError";
 import Post from "../../components/post/Post";
 import { Link } from "react-router-dom";
+import { Create } from "@material-ui/icons";
+
 import OtherHousesIcon from "@mui/icons-material/OtherHouses";
 import {
   Call,
@@ -97,8 +99,11 @@ export default function Profile() {
           <div className='myProfile'>
             <h2 className='profileInfoName'>{user.username}</h2>
             <h3>
-              <Link className='link' to='/editpage'>
-                {userId === userInfo._id && "Click here to edit your Profile"}{" "}
+              <Link className='link edit' to='/editpage'>
+                {" "}
+                {userId === userInfo._id && <Create />}
+                {userId === userInfo._id &&
+                  "Click here to edit your Profile"}{" "}
               </Link>
             </h3>
             <div className='myProfileDetails'>

@@ -11,7 +11,7 @@
   /* background-color: orange; */
   height: 90vh;
   overflow-y: scroll;
-  padding-bottom: 10%;
+  padding-bottom: 15%;
 }
 
 .chatBoxBottom {
@@ -44,15 +44,22 @@
   cursor: pointer;
 }
 .emoji-container {
-  width: 40%;
+  /* width: 40%;
   bottom: 20px;
-  top: -350px;
+  top: 450px;
   background-color: red;
+  height: 80vh;
+  position: absolute; */
+  /* display: none; */
+  position: absolute;
+  top: 150px;
 }
 .emoji-picker-react {
-  /* position: absolute; */
+  /* position: absolute;
   background-color: yellow;
-  /* top: -350px; */
+  top: 350px;
+  height: 80vh;
+  display: none; */
 }
 
 .icon {

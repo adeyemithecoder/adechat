@@ -109,12 +109,12 @@ const Messenger = ({
           </div>
         ))}
       </div>
-      {/* <div className='emoji-container'>
+      <div className='emoji-container'>
         {" "}
         {showEmojiPi && (
           <Picker className='emoji-picker-react' onEmojiClick={emojiClicked} />
         )}
-      </div> */}
+      </div>
       <form onSubmit={handleSendMessage} className='chatBoxBottom'>
         <div className='emoji'>
           <InsertEmoticonIcon onClick={EmojiPicker} />

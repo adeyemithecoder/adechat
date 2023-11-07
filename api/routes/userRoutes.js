@@ -164,6 +164,7 @@ userRouter.get(
         "email",
         "username",
         "online",
+        "updatedAt",
         "messageCount",
         "onlineTime",
         "profilePicture",

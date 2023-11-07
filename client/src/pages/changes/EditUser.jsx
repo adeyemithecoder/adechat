@@ -2,7 +2,7 @@ import { UseForm } from "../../components/useForm";
 import FormInput from "../../components/FormInput";
 import Radio from "../../components/Radio";
 import { toast } from "react-toastify";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Store } from "../../store";
 import axios from "axios";
 import { getError } from "../../components/getError";

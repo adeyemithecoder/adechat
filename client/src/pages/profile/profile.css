@@ -43,11 +43,18 @@
 .myProfileDetails p {
   display: flex;
   margin: 5px 0;
+  max-width: 300px;
 }
 .myProfileDetails p span {
   padding-left: 0.5rem;
   display: flex;
+  flex-wrap: wrap;
 }
 .myProfileDetails p span h3 {
   margin-left: 3px;
+}
+.edit {
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
 }
