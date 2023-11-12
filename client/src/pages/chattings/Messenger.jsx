@@ -9,7 +9,6 @@ import { Store } from "../../store";
 import axios from "axios";
 import { getError } from "../../components/getError";
 import { ArrowBack, CameraAlt } from "@material-ui/icons";
-// import { Back } from "../../components/topbar/Topbar";
 
 const Messenger = ({
   curChat,

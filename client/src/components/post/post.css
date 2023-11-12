@@ -7,10 +7,6 @@
   padding: 0 2%;
 }
 
-.postWrapper {
-  /* padding: 10px; */
-}
-
 .postTop {
   display: flex;
   align-items: center;
@@ -59,15 +55,28 @@
 .postBottomLeft {
   display: flex;
   align-items: center;
+  position: relative;
 }
-
-.likeIcon {
+.dislike {
+  bottom: -15px;
+  position: absolute;
+  background-color: rebeccapurple;
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  padding: 2px 5px;
+  display: none;
+}
+.postBottomLeft:hover .dislike {
+  display: flex;
+}
+.likeIcons {
+  color: rebeccapurple;
   width: 24px;
   height: 24px;
   margin-right: 5px;
   cursor: pointer;
 }
-
 .postLikeCounter {
   font-size: 15px;
 }

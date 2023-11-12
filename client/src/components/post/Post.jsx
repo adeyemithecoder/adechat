@@ -1,5 +1,6 @@
 import "./post.css";
-// import { MoreVert } from "@material-ui/icons";
+import { ThumbUp } from "@material-ui/icons";
+import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { format } from "timeago.js";
@@ -60,18 +61,12 @@ export default function Post({ post, comment, lik }) {
         </div>
         <div className='postBottom'>
           <div className='postBottomLeft'>
-            <img
-              className='likeIcon'
-              src={`${PF}like.png`}
-              onClick={likeHandler}
-              alt=''
-            />
-            <img
-              className='likeIcon'
-              src={`${PF}heart.png`}
-              onClick={likeHandler}
-              alt=''
-            />
+            {isLiked ? (
+              <ThumbUp onClick={likeHandler} className='likeIcons' />
+            ) : (
+              <ThumbUpOffAltIcon onClick={likeHandler} className='likeIcons' />
+            )}
+            <span className='dislike'> {isLiked ? "dislike" : "like"} </span>
             <span className='postLikeCounter'>
               {like ? like : lik} person like it
             </span>
