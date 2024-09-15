@@ -36,6 +36,7 @@
 }
 form {
   flex-basis: 75%;
+  height: 90vh;
   margin: auto;
   background-color: white;
   border-radius: 10px;

@@ -36,43 +36,43 @@ export default function Post({ post, comment, lik }) {
     setIsLiked(!isLiked);
   };
   return (
-    <div className='post container'>
-      <div className='postWrapper sections'>
-        <div className='postTop'>
-          <div className='postTopLeft'>
+    <div className="post container">
+      <div className="postWrapper sections">
+        <div className="postTop">
+          <div className="postTopLeft">
             <Link to={`/profile/${user._id}`}>
               <img
-                className='postProfileImg'
+                className="postProfileImg"
                 src={
                   user.profilePicture
                     ? user.profilePicture
                     : PF + "person/noAvatar.png"
                 }
-                alt=''
+                alt=""
               />
             </Link>
-            <span className='postUsername'>{user.username}</span>
-            <span className='postDate'>{format(post.createdAt)}</span>
+            <span className="postUsername">{user.username}</span>
+            <span className="postDate">{format(post.createdAt)}</span>
           </div>
         </div>
-        <div className='postCenter'>
-          <span className='postText'>{post?.desc}</span>
-          <img className='postImg' src={post.img} alt='Post Img' />
+        <div className="postCenter">
+          <span className="postText">{post?.desc}</span>
+          <img className="postImg" src={post.img} alt="Post Img" />
         </div>
-        <div className='postBottom'>
-          <div className='postBottomLeft'>
+        <div className="postBottom">
+          <div className="postBottomLeft">
             {isLiked ? (
-              <ThumbUp onClick={likeHandler} className='likeIcons' />
+              <ThumbUp onClick={likeHandler} className="likeIcons" />
             ) : (
-              <ThumbUpOffAltIcon onClick={likeHandler} className='likeIcons' />
+              <ThumbUpOffAltIcon onClick={likeHandler} className="likeIcons" />
             )}
-            <span className='dislike'> {isLiked ? "dislike" : "like"} </span>
-            <span className='postLikeCounter'>
+            <span className="dislike"> {isLiked ? "dislike" : "like"} </span>
+            <span className="postLikeCounter">
               {like ? like : lik} person like it
             </span>
           </div>
-          <div className='postBottomRight'>
-            <Link to={`/comment/${post._id}`} className='postCommentText'>
+          <div className="postBottomRight">
+            <Link to={`/comment/${post._id}`} className="postCommentText">
               {comments
                 ? comments + "  " + "comments"
                 : comment || "" + "  " + "comments"}

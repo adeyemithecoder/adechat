@@ -32,8 +32,8 @@ postRouter.get(
     }
   })
 );
-//update a post
 
+//update a post
 postRouter.put(
   "/:id",
   expressAsyncHandler(async (req, res) => {

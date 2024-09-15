@@ -5,7 +5,6 @@ const connectDB = require("./connection");
 const userRouter = require("./routes/userRoutes");
 const multer = require("multer");
 const path = require("path");
-const url = require("url");
 const postRouter = require("./routes/postRouter");
 const messageRoute = require("./routes/messageRoute");
 const socket = require("socket.io");
