@@ -75,7 +75,10 @@ input:invalid[focus="true"] ~ span {
   flex-direction: column;
 }
 .ForgottenPassword form {
-  width: 80%;
+  width: 500px;
   display: flex;
   flex-direction: column;
+}
+.ForgottenPassword button {
+  width: 400px;
 }
